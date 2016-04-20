@@ -50,11 +50,11 @@ class Television {
 
     void nextChanel() {
         if (chanelState instanceof One_plus_on) {
-            setChanelState(new Chanel_24());
+            setChanelState(new Chanel_112());
         } else if (chanelState instanceof Chanel_112) {
             setChanelState(new Chanel_24());
         } else if (chanelState instanceof Chanel_24) {
-            setChanelState(new Chanel_24());
+            setChanelState(new One_plus_on());
         }
     }
 

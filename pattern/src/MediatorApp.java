@@ -9,17 +9,17 @@ public class MediatorApp {
 
         Efir tv = new Efir();
 
-        Viewer chanel24 = new Chanel(tv);
+        TV chanel24 = new Chanel(tv);
         Viewer v1 = new SViewer(tv);
         Viewer v2 = new SViewer(tv);
 
-        tv.changeViewer(chanel24);
+
         tv.changeViewer(v1);
         tv.changeViewer(v2);
 
-        v1.viewReklama(" реклама коли");
-        v2.changeReklama(" реклама пепсі");
-        chanel24.changeReklama(" реклама на каналі новин 24 ");
+        v1.viewReklama(" реклам \"Коли\" ");
+        v2.changeReklama(" реклама \"Пепсі\" ");
+        //  chanel24.changeReklama(" реклама на каналі новин 24 ");
     }
 }
 
@@ -34,21 +34,17 @@ interface Viewer {
     void viewReklama(String video);
 }
 
-class Chanel implements Viewer {
+class Chanel implements TV {
     TV tv;
 
     public Chanel(TV tv) {
         this.tv = tv;
     }
 
-    @Override
-    public void changeReklama(String video) {
-        tv.changeReklama(video, this);
-    }
 
     @Override
-    public void viewReklama(String video) {
-        System.out.println("Реклама перемикається" + video + "!");
+    public void changeReklama(String video, Viewer viewer) {
+        tv.changeReklama(video, viewer);
     }
 }
 
