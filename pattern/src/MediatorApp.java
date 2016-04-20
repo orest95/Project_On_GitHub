@@ -1,9 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Orest on 18.04.2016.
- */
+
 public class MediatorApp {
     public static void main(String[] args) {
 
@@ -86,3 +83,5 @@ class Efir implements TV {
         chanel.changeReklama(video);
     }
 }
+
+ */
